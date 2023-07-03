@@ -17,7 +17,15 @@ buttonEnviar.addEventListener('click', function () {
     else if (inputCorreo.value == "") {
         //alert("Error: El Correo esta vacio.")
         pMensaje.innerHTML = "Error: El Correo esta vacio."
-    }else{
+    }
+    else if (inputCorreo.value.length < 10) {
+        pMensaje.innerHTML = "Error: El Correo es muy corto."
+    }
+    else if (inputCorreo.value.length > 50) {
+        pMensaje.innerHTML = "Error: El Correo excede la longitud permitida."
+    }
+    
+    else{
         pMensajeConfirmacion.innerHTML = "los datos se enviaron correctamente";
     }
    
