@@ -1,3 +1,34 @@
+body{
+    /* background-color: chocolate; */
+    font-family: 'Courier New', Courier, monospace;
+
+    background: #544a7d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd452, #544a7d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd452, #544a7d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+form{
+    background-color: #ececec;
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+form label{
+    width: 100%;
+    display: inline-block;
+    font-weight: bold;
+}
+form input{
+    width: 100%;
+    display: inline-block;
+    background-color: rgb(192, 234, 234);
+    border: 1px solid #fff;
+}
+#btn-enviar-datos{
+    /* background-color: darkgreen; */
+    
+}
 #p-mensaje-error{
     border: 2px solid rgb(72, 43, 146);
     height: 20px; 
@@ -8,3 +39,4 @@
     height: 20px; 
     padding: 20px;
 }
+
