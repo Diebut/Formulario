@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
+    <link rel="stylesheet" href="estilos.css">
+
 </head>
 <body>
-    <label for="">Escribir tu Nombre:</label>
-    <input id="input-nombre" type="text">
 
-    <label for="">Escribir tu correo:</label>
-    <input id="input-correo" type="text">
+    <form action="">
+        <div>
+            <label for="">Escribir tu Nombre:</label>
+            <input id="input-nombre" type="text">
+        </div>
+        <div>
+            <label for="">Escribir tu correo:</label>
+            <input id="input-correo" type="text">
+        </div>
+        
+        <button type="button" id="btn-enviar-datos">Enviar datos</button>
+        <button type="button" id="btn-limpiar-datos">Limpiar datos</button>
 
-    <button type="button" id="btn-enviar-datos">Enviar datos</button>
-    <button type="button" id="btn-limpiar-datos">Limpiar datos</button>
-
-    <p id="p-mensaje-error" style="border: 2px solid red; height: 20px; padding: 20px;"></p>
-    <p id="p-mensaje-confirmacion" style="border: 2px solid green; height: 20px; padding: 20px;"></p>
+        <p id="p-mensaje-error"></p>
+        <p id="p-mensaje-confirmacion"></p>
+    </form>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,10 @@
+#p-mensaje-error{
+    border: 2px solid rgb(72, 43, 146);
+    height: 20px; 
+    padding: 20px;
+}
+#p-mensaje-confirmacion{
+    border: 2px solid green; 
+    height: 20px; 
+    padding: 20px;
+}
