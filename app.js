@@ -53,15 +53,31 @@ buttonLimpiar.addEventListener('click', function () {
 const url ='https://jsonplaceholder.typicode.com/users'
 //evento
 document.addEventListener("DOMContentLoaded", LLamarAPI);
+const respuesta = document.querySelector("#respuesta");
 
 function LLamarAPI(){
-    fetch(url).then(resp => resp.json()).then(function(data) =>)
+    fetch(url)
+    .then(resp => resp.json())
+    .then((data) =>{
+        mostrarHMTL(data)
+    })
 
 //funciones
 console.log("Corriendo...")
 
-} 
-LLamarAPI();
+}
+function mostrarHMTL(datos) {
+    datos.forEach(item => { //hace referencia a todos los elementos
+        //console.log(item);
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.email}</td>`
+
+        respuesta.appendChild(row);
+    });
+}
+
 
 
     // let url = 'https://jsonplaceholder.typicode.com/users' // 1 
