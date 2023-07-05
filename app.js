@@ -50,20 +50,23 @@ buttonLimpiar.addEventListener('click', function () {
 });
 
 //variables
-const url ='https://jsonplaceholder.typicode.com/users'
+const url ='http://localhost:4000'
 //evento
 document.addEventListener("DOMContentLoaded", LLamarAPI);
 const respuesta = document.querySelector("#respuesta");
 
-function LLamarAPI(){
-    fetch(url)
-    .then(resp => resp.json())
-    .then((data) =>{
-        mostrarHMTL(data)
-    })
-
 //funciones
-console.log("Corriendo...")
+async function LLamarAPI(){
+    const respuesta = await fetch(url)
+    const data = await respuesta.json()
+    mostrarHMTL(data)
+
+//     fetch(url)
+//     .then(resp => resp.json())
+//     .then((data) =>{
+//         mostrarHMTL(data)
+//     })
+ console.log("Corriendo...")
 
 }
 function mostrarHMTL(datos) {
@@ -71,16 +74,18 @@ function mostrarHMTL(datos) {
         //console.log(item);
         const row = document.createElement('tr');
         row.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.email}</td>`
+        <td>${item.nombre}</td>
+        <td>${item.correo}</td>
+        <td>${item.id}</td>`
 
         respuesta.appendChild(row);
     });
+    
 }
 
 
 
-    // let url = 'https://jsonplaceholder.typicode.com/users' // 1 
+    // let url = '' // 1 
     // fetch(url) // 2 
     // .then(response => response.json()) // 3 - se resuelve la promesa al obtner la respuesta la pasa aun detereminado formato  
     // .then(data => mostrarData(data)) //  4 - leemos este object data y lo mostramos por consola 
@@ -96,7 +101,7 @@ function mostrarHMTL(datos) {
 
 
 
-    // fetch('https://jsonplaceholder.typicode.com/users')
+    // fetch('')
     // .then((Response) => Response.json())
     // .then((usuarios)=>{
     //     let tablaUsuarios = document.querySelector("#table-usuarios tbody");
