@@ -41,10 +41,53 @@ buttonLimpiar.addEventListener('click', function () {
    alert('Limpiar');
    //buscar el input del nombre
    let inputNombre = document.getElementById('input-nombre');
-   inputNombre.value = "";
+   inputNombre.value = '';
 
    //buscar el input del correo
    let inputCorreo = document.getElementById('input-correo');
    inputCorreo.value = '';
 
 });
+
+//variables
+const url ='https://jsonplaceholder.typicode.com/users'
+//evento
+document.addEventListener("DOMContentLoaded", LLamarAPI);
+
+function LLamarAPI(){
+    fetch(url).then(resp => resp.json()).then(function(data) =>)
+
+//funciones
+console.log("Corriendo...")
+
+} 
+LLamarAPI();
+
+
+    // let url = 'https://jsonplaceholder.typicode.com/users' // 1 
+    // fetch(url) // 2 
+    // .then(response => response.json()) // 3 - se resuelve la promesa al obtner la respuesta la pasa aun detereminado formato  
+    // .then(data => mostrarData(data)) //  4 - leemos este object data y lo mostramos por consola 
+    // .catch(error => console.error()) //5 - si hay un error sera atrpado por la palabra reservada catch 
+    //     const mostrarData = (data)=>{
+    //         console.log(data)
+    //         let body = ''
+    //     for (let i = 0; i < data.length; i++) {
+    //         body +=  `<tr><td>${data[i].nombre}</td><td>${data[i].correo}</td><td>${data[i].id}</td></tr>`
+    // }
+    // document.getElementById('data').innerHTML = body
+    // }
+
+
+
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    // .then((Response) => Response.json())
+    // .then((usuarios)=>{
+    //     let tablaUsuarios = document.querySelector("#table-usuarios tbody");
+
+    //     for (const itemUsuario of usuarios) {
+    //         let tr = "<tr> <td>" + itemUsuario.nombre + "</td> <td>" + itemUsuario.correo + "</td> </tr>"
+    //         tablaUsuarios.innerHTML += tr;
+    //     }
+    // });
+

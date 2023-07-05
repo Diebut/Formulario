@@ -4,28 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,600&family=Oswald:wght@200;300;400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 
 </head>
 <body>
 
     <form action="">
+        <h2>FORMULARIO</h2>
         <div>
-            <label for="">Escribir tu Nombre:</label>
+            <label>Escribir tu Nombre:</label>
             <input id="input-nombre" type="text">
         </div>
         <div>
-            <label for="">Escribir tu correo:</label>
+            <label>Escribir tu correo:</label>
             <input id="input-correo" type="text">
         </div>
         
-        <button type="button" id="btn-enviar-datos">Enviar datos</button>
-        <button type="button" id="btn-limpiar-datos">Limpiar datos</button>
+        <button type="button" id="btn-enviar-datos" class="btn-form"><i class="fas fa-paper-plane"></i>Enviar datos</button>
+        <button type="button" id="btn-limpiar-datos" class="btn-form"><i class="fas fa-backspace"></i>Limpiar datos</button>
 
         <p id="p-mensaje-error"></p>
         <p id="p-mensaje-confirmacion"></p>
-    </form>
 
-    <script src="script.js"></script>
+    </form>
+    <br/>
+
+    <div class="table-contenedor">
+        <p>Usuarios Registrados</p>
+        <table id="table-usuarios">
+            <thead>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Id</th>
+            </thead>
+            <tbody id="data">  <!-- id="data"-->
+                <tr>
+                    <td>Test</td>
+                    <td>test@correo.com</td>
+                </tr>
+            </tbody>
+        </table>
+  
+    </div>
+
+    <script src="app.js"></script>
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/f24051bb43.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
