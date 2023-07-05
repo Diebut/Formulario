@@ -49,39 +49,53 @@ buttonLimpiar.addEventListener('click', function () {
 
 });
 
-//variables
-const url ='http://localhost:4000'
-//evento
-document.addEventListener("DOMContentLoaded", LLamarAPI);
-const respuesta = document.querySelector("#respuesta");
+// //variables
+// const url ='http://localhost:4000'
+// //evento
+// document.addEventListener("DOMContentLoaded", LLamarAPI);
+// const respuesta = document.querySelector("#respuesta");
 
-//funciones
-async function LLamarAPI(){
-    const respuesta = await fetch(url)
-    const data = await respuesta.json()
-    mostrarHMTL(data)
+// //funciones
+// async function LLamarAPI(){
+//     const respuesta = await fetch(url)
+//     const data = await respuesta.json()
+//     mostrarHMTL(data)
 
-//     fetch(url)
-//     .then(resp => resp.json())
-//     .then((data) =>{
-//         mostrarHMTL(data)
-//     })
- console.log("Corriendo...")
+// //     fetch(url)
+// //     .then(resp => resp.json())
+// //     .then((data) =>{
+// //         mostrarHMTL(data)
+// //     })
+//  console.log("Corriendo...")
 
-}
-function mostrarHMTL(datos) {
-    datos.forEach(item => { //hace referencia a todos los elementos
-        //console.log(item);
-        const row = document.createElement('tr');
-        row.innerHTML = `
-        <td>${item.nombre}</td>
-        <td>${item.correo}</td>
-        <td>${item.id}</td>`
+// }
+// function mostrarHMTL(datos) {
+//     datos.forEach(item => { //hace referencia a todos los elementos
+//         //console.log(item);
+//         const row = document.createElement('tr');
+//         row.innerHTML = `
+//         <td>${item.nombre}</td>
+//         <td>${item.correo}</td>
+//         <td>${item.id}</td>`
 
-        respuesta.appendChild(row);
+//         respuesta.appendChild(row);
+//     });
+
+function llamarAPI() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then((Response) => Response.json())
+    .then((usuarios)=>{
+    let tablaUsuarios = document.querySelector("#table-usuarios tbody");
+
+        for (const itemUsuario of usuarios) {
+            let tr = "<tr> <td>" + itemUsuario.name + "</td> <td>" + itemUsuario.email + "</td> <td>" + itemUsuario.id + "</td> </tr>"
+            tablaUsuarios.innerHTML += tr;
+        }
     });
-    
 }
+llamarAPI();
+
+
 
 
 
@@ -100,15 +114,4 @@ function mostrarHMTL(datos) {
     // }
 
 
-
-    // fetch('')
-    // .then((Response) => Response.json())
-    // .then((usuarios)=>{
-    //     let tablaUsuarios = document.querySelector("#table-usuarios tbody");
-
-    //     for (const itemUsuario of usuarios) {
-    //         let tr = "<tr> <td>" + itemUsuario.nombre + "</td> <td>" + itemUsuario.correo + "</td> </tr>"
-    //         tablaUsuarios.innerHTML += tr;
-    //     }
-    // });
 
