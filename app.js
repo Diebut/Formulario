@@ -49,24 +49,24 @@ buttonLimpiar.addEventListener('click', function () {
 
 });
 
-function llamarAPI() {
+// function llamarAPI() {
 
-    let url = 'http://localhost:4000/users' // 1 
-    fetch(url) // 2 
-    .then(response => response.json()) // 3 - se resuelve la promesa al obtner la respuesta la pasa aun detereminado formato  
-    .then(data => mostrarData(data)) //  4 - leemos este object data y lo mostramos por consola 
-    .catch(error => console.error()) //5 - si hay un error sera atrpado por la palabra reservada catch 
-        const mostrarData = (data)=>{
-            console.log(data)
-            let body = ''
-        for (let i = 0; i < data.length; i++) {
-            body +=  `<tr><td>${data[i].nombre}</td><td>${data[i].correo}</td><td>${data[i].id}</td></tr>`
-    }
-    document.getElementById('data').innerHTML = body
-    }
+//     let url = 'http://localhost:4000/users' // 1 
+//     fetch(url) // 2 
+//     .then(response => response.json()) // 3 - se resuelve la promesa al obtner la respuesta la pasa aun detereminado formato  
+//     .then(data => mostrarData(data)) //  4 - leemos este object data y lo mostramos por consola 
+//     .catch(error => console.error()) //5 - si hay un error sera atrpado por la palabra reservada catch 
+//         const mostrarData = (data)=>{
+//             console.log(data)
+//             let body = ''
+//         for (let i = 0; i < data.length; i++) {
+//             body +=  `<tr><td>${data[i].nombre}</td><td>${data[i].correo}</td><td>${data[i].id}</td></tr>`
+//     }
+//     document.getElementById('data').innerHTML = body
+//     }
 
-}
-llamarAPI();
+// }
+// llamarAPI();
 
 // //variable
 // const url ='http://localhost:4000/users'
@@ -104,18 +104,17 @@ llamarAPI();
 
 
 
+function llamarAPI() {
+    fetch('http://localhost:4000/users')
+    .then((Response) => Response.json())
+    .then((users)=>{
+    let tablaUsuarios = document.querySelector("#table-usuarios tbody");
 
-// function llamarAPI() {
-//     fetch('http://localhost:4000/users')
-//     .then((Response) => Response.json())
-//     .then((usuarios)=>{
-//     let tablaUsuarios = document.querySelector("#table-usuarios tbody");
-
-//         for (const itemUsuario of usuarios) {
-//             let tr = "<tr> <td>" + itemUsuario.nombre + "</td> <td>" + itemUsuario.correo + "</td> <td>" + itemUsuario.id + "</td> </tr>"
-//             tablaUsuarios.innerHTML += tr;
-//         }
-//     });
-// }
-// llamarAPI();
+        for (const itemUsuario of users) {
+            let tr = "<tr> <td>" + itemUsuario.nombre + "</td> <td>" + itemUsuario.correo + "</td> <td>" + itemUsuario.id + "</td> </tr>"
+            tablaUsuarios.innerHTML += tr;
+        }
+    });
+}
+llamarAPI();
 
